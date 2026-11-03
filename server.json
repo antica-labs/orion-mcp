@@ -1,22 +1,18 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
-  "name": "eu.orion-finance/orion-mcp",
-  "description": "ORION — Plateforme souveraine d'ingénierie patrimoniale, fiducies et organigrammes pour CGP & Family Offices.",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.maximecernot-crypto/orion",
+  "title": "ORION ? Ing?nierie Patrimoniale & Fiducie",
+  "description": "Ing?nierie patrimoniale, fiducies, organigrammes et fiscalit? pour CGP et Family Offices.",
   "version": "1.0.0",
+  "websiteUrl": "https://www.orion-finance.eu",
   "repository": {
-    "url": "https://github.com/maximecernot-crypto/orion-mcp-mcp",
+    "url": "https://github.com/maximecernot-crypto/orion-mcp",
     "source": "github"
   },
-  "websiteUrl": "https://www.orion-finance.eu",
   "remotes": [
     {
-      "transport_type": "streamable-http",
-      "url": "https://www.orion-finance.eu/api/mcp",
-      "authentication": {
-        "type": "oauth2",
-        "authorization_server_metadata_url": "https://www.orion-finance.eu/.well-known/oauth-authorization-server",
-        "protected_resource_metadata_url": "https://www.orion-finance.eu/.well-known/oauth-protected-resource"
-      }
+      "type": "streamable-http",
+      "url": "https://www.orion-finance.eu/api/mcp"
     }
   ]
 }
