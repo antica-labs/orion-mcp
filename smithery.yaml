@@ -1,0 +1,11 @@
+# Smithery.ai MCP Server Configuration — ORION (orion-finance.eu)
+startCommand:
+  type: http
+  url: https://www.orion-finance.eu/api/mcp
+  configSchema:
+    type: object
+    properties:
+      apiKey:
+        type: string
+        title: Jeton MCP ORION (orion_mcp_...)
+        description: Jeton MCP généré depuis https://www.orion-finance.eu/advisor/api-mcp ou via OAuth 2.1.

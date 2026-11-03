@@ -1,0 +1,27 @@
+{
+  "name": "orion",
+  "displayName": "ORION Wealth Management",
+  "version": "1.0.0",
+  "description": "Connect ORION (orion-finance.eu) to analyze consolidated wealth, trusts (fiducies), corporate holding structures, and estate planning under native RLS.",
+  "logo": "./assets/logo.svg",
+  "suggestedPrompts": [
+    {
+      "title": "Synthese du patrimoine",
+      "prompt": "Affiche la synthese consolidee du patrimoine (immobilier, financier, liquidites) via ORION."
+    },
+    {
+      "title": "Analyser l'organigramme",
+      "prompt": "Liste les societes, holdings et liens de detention de l'organigramme patrimonial dans ORION."
+    },
+    {
+      "title": "Audit des fiducies",
+      "prompt": "Liste les fiducies actives et les beneficiaires de transmission avec leurs quotes-parts dans ORION."
+    }
+  ],
+  "author": {
+    "name": "ORION Finance",
+    "email": "contact@orion-finance.eu"
+  },
+  "homepage": "https://www.orion-finance.eu",
+  "repository": "https://github.com/maximecernot-crypto/orion-mcp-mcp"
+}

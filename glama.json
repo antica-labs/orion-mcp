@@ -1,0 +1,11 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["maximecernot-crypto"],
+  "name": "ORION Wealth Management",
+  "description": "Serveur MCP officiel d'ORION (orion-finance.eu) pour l'ingénierie patrimoniale, les fiducies, l'organigramme capitalistique et la transmission successorale.",
+  "homepage": "https://www.orion-finance.eu",
+  "remote": {
+    "transport": "streamable-http",
+    "url": "https://www.orion-finance.eu/api/mcp"
+  }
+}

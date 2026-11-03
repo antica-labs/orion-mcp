@@ -1,0 +1,38 @@
+{
+  "connector_name": "ORION Wealth Management",
+  "connector_id": "orion_finance_mcp",
+  "description_for_human": "Ingénierie patrimoniale, fiducies, organigramme capitalistique et transmission pour CGP & Family Offices (orion-finance.eu).",
+  "description_for_model": "Utilisez le serveur MCP ORION pour consulter et mettre à jour le patrimoine consolidé (immobilier, titres financiers, comptes bancaires, actifs de diversification), les fiducies, les bénéficiaires et l'organigramme de détention. Toutes les requêtes s'exécutent sous isolation RLS native.",
+  "mcp_server": {
+    "url": "https://www.orion-finance.eu/api/mcp",
+    "transport": "streamable_http",
+    "protocol_version": "2025-03-26",
+    "deep_research_compatible": true,
+    "required_tools": ["search", "fetch"]
+  },
+  "openapi_spec_url": "https://www.orion-finance.eu/api/mcp/openapi.json",
+  "auth": {
+    "type": "oauth2",
+    "authorization_url": "https://www.orion-finance.eu/api/oauth/authorize",
+    "token_url": "https://www.orion-finance.eu/api/oauth/token",
+    "registration_url": "https://www.orion-finance.eu/api/oauth/register",
+    "code_challenge_method": "S256",
+    "scope": "read:patrimoine read:fiducies read:organigramme read:documents",
+    "allowed_redirect_uris": [
+      "https://chatgpt.com/connector_platform_oauth_redirect",
+      "https://platform.openai.com/apps-manage/oauth"
+    ]
+  },
+  "onboarding": {
+    "signup_url": "https://www.orion-finance.eu/inscription",
+    "api_keys_url": "https://www.orion-finance.eu/advisor/api-mcp",
+    "privacy_policy_url": "https://www.orion-finance.eu/confidentialite",
+    "terms_of_service_url": "https://www.orion-finance.eu/cgu"
+  },
+  "responses_api_snippet": {
+    "type": "mcp",
+    "server_label": "orion",
+    "server_url": "https://www.orion-finance.eu/api/mcp",
+    "require_approval": "never"
+  }
+}

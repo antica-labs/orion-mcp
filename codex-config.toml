@@ -1,0 +1,11 @@
+# Configuration officielle OpenAI Codex CLI / Cloud (~/.codex/config.toml)
+# Documentation : https://www.orion-finance.eu/securite
+# Créez un compte sur https://www.orion-finance.eu/inscription puis générez
+# un jeton `orion_mcp_...` dans Paramètres -> API & MCP (/advisor/api-mcp).
+
+[mcp_servers.orion]
+url = "https://www.orion-finance.eu/api/mcp"
+bearer_token_env_var = "ORION_MCP_TOKEN"
+startup_timeout_sec = 15
+tool_timeout_sec = 30
+enabled = true

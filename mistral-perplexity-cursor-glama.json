@@ -1,0 +1,31 @@
+{
+  "mistral_le_chat": {
+    "name": "ORION Wealth Management",
+    "description": "Ingénierie patrimoniale, fiducies, holdings et transmission pour CGP & Family Offices (orion-finance.eu).",
+    "mcp_endpoint": "https://www.orion-finance.eu/api/mcp",
+    "transport": "streamable-http",
+    "auth_type": "oauth2_or_bearer",
+    "oauth_metadata": "https://www.orion-finance.eu/.well-known/oauth-authorization-server",
+    "signup_url": "https://www.orion-finance.eu/inscription"
+  },
+  "perplexity_connector": {
+    "name": "ORION Wealth Management",
+    "server_url": "https://www.orion-finance.eu/api/mcp",
+    "discovery_url": "https://www.orion-finance.eu/.well-known/mcp.json",
+    "auth_header": "Authorization: Bearer orion_mcp_..."
+  },
+  "cursor_deeplink": {
+    "mcpServers": {
+      "orion": {
+        "url": "https://www.orion-finance.eu/api/mcp"
+      }
+    }
+  },
+  "glama": {
+    "$schema": "https://glama.ai/mcp/schemas/connector.json",
+    "name": "ORION Wealth Management",
+    "url": "https://www.orion-finance.eu/api/mcp",
+    "homepage": "https://www.orion-finance.eu",
+    "author": "ORION Finance"
+  }
+}

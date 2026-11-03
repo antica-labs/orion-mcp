@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "orion-marketplace",
+  "description": "Official Claude & MCP Plugin Marketplace for ORION Wealth Management (orion-finance.eu)",
+  "owner": {
+    "name": "ORION Finance",
+    "email": "contact@orion-finance.eu"
+  },
+  "plugins": [
+    {
+      "name": "orion",
+      "displayName": "ORION Wealth Management",
+      "description": "Connect ORION (orion-finance.eu) to analyze consolidated wealth, trusts (fiducies), corporate holding structures, and estate planning under native RLS.",
+      "author": {
+        "name": "ORION Finance",
+        "email": "contact@orion-finance.eu"
+      },
+      "category": "productivity",
+      "source": "./",
+      "homepage": "https://www.orion-finance.eu"
+    }
+  ]
+}

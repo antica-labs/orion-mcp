@@ -1,0 +1,47 @@
+{
+  "submission_type": "remote_mcp_connector",
+  "portal_url": "https://claude.ai/directory/manage",
+  "name": "ORION Wealth Management",
+  "slug": "orion-wealth-management",
+  "tagline": "Ingénierie patrimoniale, fiducies, holdings et transmission pour CGP & Family Offices.",
+  "description": "Connectez votre espace ORION (orion-finance.eu) à Claude pour interroger et mettre à jour le patrimoine consolidé, les fiducies, l'organigramme de détention et les bénéficiaires de transmission sous isolation RLS native et conformité RGPD/AIPD.",
+  "category": "Finance & Wealth Management",
+  "server_url": "https://www.orion-finance.eu/api/mcp",
+  "protocol_version": "2025-03-26",
+  "transport": "streamable-http",
+  "authentication": {
+    "type": "oauth2",
+    "pkce_required": true,
+    "code_challenge_method": "S256",
+    "protected_resource_metadata_url": "https://www.orion-finance.eu/.well-known/oauth-protected-resource",
+    "authorization_server_metadata_url": "https://www.orion-finance.eu/.well-known/oauth-authorization-server",
+    "authorization_url": "https://www.orion-finance.eu/api/oauth/authorize",
+    "token_url": "https://www.orion-finance.eu/api/oauth/token",
+    "registration_url": "https://www.orion-finance.eu/api/oauth/register",
+    "allowed_callback_urls": [
+      "https://claude.ai/api/mcp/auth_callback",
+      "https://claude.com/api/mcp/auth_callback",
+      "http://localhost/callback",
+      "claude://mcp/auth_callback"
+    ],
+    "default_scopes": [
+      "read:patrimoine",
+      "read:fiducies",
+      "read:organigramme",
+      "read:documents"
+    ],
+    "optional_write_scopes": [
+      "write:patrimoine",
+      "write:banque",
+      "write:transmission"
+    ]
+  },
+  "links": {
+    "homepage": "https://www.orion-finance.eu",
+    "signup_onboarding": "https://www.orion-finance.eu/inscription",
+    "documentation": "https://www.orion-finance.eu/securite",
+    "privacy_policy": "https://www.orion-finance.eu/confidentialite",
+    "terms_of_service": "https://www.orion-finance.eu/cgu",
+    "support_email": "contact@orion-finance.eu"
+  }
+}

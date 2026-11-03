@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "orion": {
+      "serverUrl": "https://www.orion-finance.eu/api/mcp"
+    }
+  }
+}
