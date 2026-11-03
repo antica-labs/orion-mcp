@@ -1,10 +1,19 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.maximecernot-crypto/orion",
-  "title": "ORION ? Ing?nierie Patrimoniale & Fiducie",
-  "description": "Ing?nierie patrimoniale, fiducies, organigrammes et fiscalit? pour CGP et Family Offices.",
-  "version": "1.0.0",
+  "title": "ORION — Ingénierie Patrimoniale & Fiducie",
+  "description": "Ingénierie patrimoniale, fiducies, organigrammes et fiscalité pour CGP et Family Offices.",
+  "version": "1.0.1",
   "websiteUrl": "https://www.orion-finance.eu",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/maximecernot-crypto/orion-mcp/main/assets/logo.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
   "repository": {
     "url": "https://github.com/maximecernot-crypto/orion-mcp",
     "source": "github"
