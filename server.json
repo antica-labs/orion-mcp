@@ -3,11 +3,11 @@
   "name": "eu.orion-finance/orion",
   "title": "ORION — Ingénierie Patrimoniale & Fiducie",
   "description": "Ingénierie patrimoniale, fiducies, organigrammes et fiscalité pour CGP et Family Offices.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://www.orion-finance.eu",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/maximecernot-crypto/orion-mcp/main/assets/logo.svg",
+      "src": "https://raw.githubusercontent.com/antica-labs/orion-mcp/main/assets/logo.svg",
       "mimeType": "image/svg+xml",
       "sizes": [
         "any"
@@ -15,7 +15,7 @@
     }
   ],
   "repository": {
-    "url": "https://github.com/maximecernot-crypto/orion-mcp",
+    "url": "https://github.com/antica-labs/orion-mcp",
     "source": "github"
   },
   "remotes": [
