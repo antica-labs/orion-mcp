@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.maximecernot-crypto/orion",
+  "name": "eu.orion-finance/orion",
   "title": "ORION — Ingénierie Patrimoniale & Fiducie",
   "description": "Ingénierie patrimoniale, fiducies, organigrammes et fiscalité pour CGP et Family Offices.",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "websiteUrl": "https://www.orion-finance.eu",
   "icons": [
     {
