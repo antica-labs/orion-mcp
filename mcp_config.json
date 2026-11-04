@@ -1,7 +1,10 @@
 {
-  "mcpServers": {
-    "orion": {
-      "serverUrl": "https://www.orion-finance.eu/api/mcp"
-    }
-  }
+    "mcpServers":  {
+                       "orion":  {
+                                     "url":  "https://orion-finance.eu/api/mcp",
+                                     "oauth":  {
+                                                   "clientId":  "antigravity-marketplace-client"
+                                               }
+                                 }
+                   }
 }

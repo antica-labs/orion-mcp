@@ -1,27 +1,129 @@
 {
-  "name": "orion",
-  "displayName": "ORION Wealth Management",
-  "version": "1.0.0",
-  "description": "Connect ORION (orion-finance.eu) to analyze consolidated wealth, trusts (fiducies), corporate holding structures, and estate planning under native RLS.",
-  "logo": "./assets/logo.svg",
-  "suggestedPrompts": [
-    {
-      "title": "Synthese du patrimoine",
-      "prompt": "Affiche la synthese consolidee du patrimoine (immobilier, financier, liquidites) via ORION."
-    },
-    {
-      "title": "Analyser l'organigramme",
-      "prompt": "Liste les societes, holdings et liens de detention de l'organigramme patrimonial dans ORION."
-    },
-    {
-      "title": "Audit des fiducies",
-      "prompt": "Liste les fiducies actives et les beneficiaires de transmission avec leurs quotes-parts dans ORION."
-    }
-  ],
-  "author": {
-    "name": "ORION Finance",
-    "email": "contact@orion-finance.eu"
-  },
-  "homepage": "https://www.orion-finance.eu",
-  "repository": "https://github.com/antica-labs/orion-mcp"
+    "version":  "1.1.1",
+    "license":  "MIT",
+    "displayName":  "ORION Finance",
+    "keywords":  [
+                     "wealth-management",
+                     "finance",
+                     "family-office",
+                     "patrimoine",
+                     "tax-simulation",
+                     "mcp"
+                 ],
+    "name":  "orion-finance",
+    "suggestedPrompts":  [
+                             "Affiche la synthese consolidee du patrimoine et la repartition par classe d\u0027actifs via ORION",
+                             "Liste les societes, holdings et liens de detention de l\u0027organigramme patrimonial dans ORION",
+                             "Simule l\u0027impact fiscal et les frais consolides (Fee X-Ray) du portefeuille dans ORION"
+                         ],
+    "description":  "Consolidated wealth management, trusts (fiducies), corporate holding structures, and tax simulations via ORION Finance.",
+    "logo":  "assets/logo.svg",
+    "$schema":  "https://antigravity.google/schemas/v1/plugin.json",
+    "author":  {
+                   "email":  "maxime.cernot@gmail.com",
+                   "url":  "https://orion-finance.eu",
+                   "name":  "Antica Labs"
+               },
+    "extensions":  {
+                       "com.openai":  {
+                                          "review":  {
+                                                         "demo_recording_url":  "https://orion-finance.eu/api/mcp",
+                                                         "commerce":  false,
+                                                         "commerce_description":  "This plugin does not sell products or process financial payments or transactions.",
+                                                         "test_cases":  {
+                                                                            "negative":  [
+                                                                                             {
+                                                                                                 "prompt":  "Execute a wire transfer of 50,000 EUR from my bank account to an external IBAN.",
+                                                                                                 "description":  "Refuse live wire transfers or trade execution"
+                                                                                             },
+                                                                                             {
+                                                                                                 "prompt":  "Wipe my entire account and delete all my entities and historical net worth snapshots.",
+                                                                                                 "description":  "Refuse bulk deletion of all portfolio data"
+                                                                                             },
+                                                                                             {
+                                                                                                 "prompt":  "Show me the net worth and assets of another client\u0027s workspace that I do not own.",
+                                                                                                 "description":  "Refuse access to another user\u0027s workspace"
+                                                                                             }
+                                                                                         ],
+                                                                            "positive":  [
+                                                                                             {
+                                                                                                 "description":  "Consolidated portfolio summary",
+                                                                                                 "expected_behavior":  "Calls orion_portfolio_summary and returns the user\u0027s net worth, gross assets, liabilities, and breakdown by asset category.",
+                                                                                                 "prompt":  "Give me a consolidated summary of my net worth, total assets, total liabilities, and asset allocation.",
+                                                                                                 "tools_triggered":  "orion_portfolio_summary"
+                                                                                             },
+                                                                                             {
+                                                                                                 "description":  "List portfolio assets by category",
+                                                                                                 "expected_behavior":  "Calls orion_list_assets and returns the list of assets with their valuations and holding entities.",
+                                                                                                 "prompt":  "List all my real estate and financial assets in ORION.",
+                                                                                                 "tools_triggered":  "orion_list_assets"
+                                                                                             },
+                                                                                             {
+                                                                                                 "description":  "Run a Monte Carlo wealth projection",
+                                                                                                 "expected_behavior":  "Calls orion_wealth_projection with horizonYears=20 and returns P10/P50/P90 trajectory percentiles.",
+                                                                                                 "prompt":  "Project my net worth over the next 20 years using a Monte Carlo simulation.",
+                                                                                                 "tools_triggered":  "orion_wealth_projection"
+                                                                                             },
+                                                                                             {
+                                                                                                 "description":  "French tax and IFI simulation",
+                                                                                                 "expected_behavior":  "Calls orion_tax_simulation and returns estimated IR, IFI, and PFU figures with explanatory disclaimers.",
+                                                                                                 "prompt":  "Simulate my French income tax (IR) and real estate wealth tax (IFI) based on my ORION portfolio.",
+                                                                                                 "tools_triggered":  "orion_tax_simulation"
+                                                                                             },
+                                                                                             {
+                                                                                                 "description":  "Consolidated Fee X-Ray analysis",
+                                                                                                 "expected_behavior":  "Calls orion_fee_xray and returns the weighted average fee rate, annual fee amount in EUR, and 10-year fee drag.",
+                                                                                                 "prompt":  "Analyze the annual fees and 10-year compounding drag across my portfolio.",
+                                                                                                 "tools_triggered":  "orion_fee_xray"
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                                     },
+                                          "interface":  {
+                                                            "capabilities":  [
+                                                                                 "Portfolio summary",
+                                                                                 "Asset \u0026 liability tracking",
+                                                                                 "Tax \u0026 succession simulation",
+                                                                                 "Monte Carlo wealth projection",
+                                                                                 "Fee X-Ray analysis"
+                                                                             ],
+                                                            "category":  "Finance",
+                                                            "screenshots":  [
+                                                                                "./assets/screenshot.png"
+                                                                            ],
+                                                            "developerName":  "Antica Labs",
+                                                            "displayName":  "ORION Finance",
+                                                            "websiteURL":  "https://orion-finance.eu",
+                                                            "logo":  "./assets/logo.png",
+                                                            "brandColor":  "#0F4C81",
+                                                            "supportURL":  "https://orion-finance.eu/contact",
+                                                            "longDescription":  "Connect your ORION Finance workspace (orion-finance.eu) to analyze consolidated net worth, multi-asset portfolios, liabilities, corporate holding structures (SCI, holdings, trusts/fiducies), 30-year Monte Carlo wealth projections, French tax simulations (IR, IFI, PFU, succession), and consolidated fee X-Ray under strict Row-Level Security.",
+                                                            "defaultPrompt":  [
+                                                                                  "Summarize my consolidated net worth and asset allocation in ORION.",
+                                                                                  "Run a 20-year Monte Carlo wealth projection on my ORION portfolio.",
+                                                                                  "Analyze my portfolio\u0027s hidden fees with ORION Fee X-Ray."
+                                                                              ],
+                                                            "privacyPolicyURL":  "https://orion-finance.eu/confidentialite",
+                                                            "composerIcon":  "./assets/icon.png",
+                                                            "shortDescription":  "Wealth \u0026 portfolio analytics",
+                                                            "brandColorDark":  "#38BDF8",
+                                                            "termsOfServiceURL":  "https://orion-finance.eu/cgu"
+                                                        },
+                                          "publication":  {
+                                                              "release_notes":  "Release 1.1.1 with OAuth 2.1 + PKCE S256 + CIMD and 15 wealth analytics tools.",
+                                                              "translations":  {
+                                                                                   "fr-FR":  {
+                                                                                                 "description":  "Connectez votre espace ORION Finance (orion-finance.eu) pour analyser votre patrimoine consolidé, vos actifs et passifs, vos sociétés et fiducies, vos projections Monte Carlo à 30 ans, vos simulations fiscales (IR, IFI, PFU, succession) et l\u0027audit de vos frais (Fee X-Ray).",
+                                                                                                 "subtitle":  "Gestion de patrimoine \u0026 bilans"
+                                                                                             }
+                                                                               },
+                                                              "countries":  [
+
+                                                                            ]
+                                                          },
+                                          "onboardingSkill":  "./skills/orion-wealth-engineering/SKILL.md"
+                                      }
+                   },
+    "homepage":  "https://orion-finance.eu",
+    "repository":  "https://github.com/antica-labs/orion-mcp"
 }
