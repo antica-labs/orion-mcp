@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "eu.orion-finance/orion",
-  "title": "ORION — Ingénierie Patrimoniale & Fiducie",
-  "description": "Ingénierie patrimoniale, fiducies, organigrammes et fiscalité pour CGP et Family Offices.",
-  "version": "1.1.4",
+  "title": "ORION Finance — Wealth Engineering & Fiduciary Governance",
+  "description": "Deterministic wealth consolidation, fiduciary covenants, tax projections, and WORM GED audit.",
+  "version": "1.2.0",
   "websiteUrl": "https://www.orion-finance.eu",
   "icons": [
     {

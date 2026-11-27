@@ -1,7 +1,7 @@
 {
   "mistral_le_chat": {
-    "name": "ORION Wealth Management",
-    "description": "Ingénierie patrimoniale, fiducies, holdings et transmission pour CGP & Family Offices (orion-finance.eu).",
+    "name": "ORION Finance",
+    "description": "Connectez votre espace ORION Finance (www.orion-finance.eu) pour consolider un patrimoine net vérifié, auditer la gouvernance de holdings et fiducies, projeter la fiscalité (IR, IFI, PFU, succession) et contrôler l'inventaire GED sous isolation RLS stricte.",
     "mcp_endpoint": "https://www.orion-finance.eu/api/mcp",
     "transport": "streamable-http",
     "auth_type": "oauth2_or_bearer",
@@ -9,10 +9,11 @@
     "signup_url": "https://www.orion-finance.eu/inscription"
   },
   "perplexity_connector": {
-    "name": "ORION Wealth Management",
+    "name": "ORION Finance",
     "server_url": "https://www.orion-finance.eu/api/mcp",
-    "discovery_url": "https://www.orion-finance.eu/.well-known/mcp.json",
-    "auth_header": "Authorization: Bearer orion_mcp_..."
+    "discovery_url": "https://www.orion-finance.eu/.well-known/mcp-connector.json",
+    "mcp_manifest_url": "https://www.orion-finance.eu/.well-known/mcp.json",
+    "openapi_url": "https://www.orion-finance.eu/openapi.json"
   },
   "cursor_deeplink": {
     "mcpServers": {
@@ -23,9 +24,9 @@
   },
   "glama": {
     "$schema": "https://glama.ai/mcp/schemas/connector.json",
-    "name": "ORION Wealth Management",
+    "name": "ORION Finance",
     "url": "https://www.orion-finance.eu/api/mcp",
     "homepage": "https://www.orion-finance.eu",
-    "author": "ORION Finance"
+    "author": "Antica Labs"
   }
 }

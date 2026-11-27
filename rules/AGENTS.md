@@ -1,9 +1,9 @@
 ---
-description: Règles de sécurité, de confidentialité RGPD/AIPD et d'exactitude patrimoniale lors de l'utilisation du serveur MCP ORION.
+description: Security, OAuth 2.1 RLS tenant isolation, and Output-First precision rules when calling ORION Finance (https://www.orion-finance.eu/api/mcp).
 ---
 
-# Règles d'utilisation du connecteur MCP ORION
+# ORION Finance — Agent Governance Rules
 
-1. **Isolation RLS & Périmètre du Jeton** : Toutes les lectures et écritures sont bornées par le jeton MCP (`tenant`, `advisor` ou `client`). Si une table réservée au conseiller (`list_organigramme`, `list_beneficiaires`) renvoie 0 ligne avec un jeton client, expliquez que le périmètre du jeton est restreint au client.
-2. **Protection des Données Sensibles (AIPD)** : Ne demandez jamais et ne tentez jamais d'extraire des pièces d'identité (CNI, passeport), des dossiers KYC/LCB-FT ou des documents médicaux via MCP.
-3. **Écritures Confirmées** : Avant d'appeler un outil d'écriture (`create_actif_divers`, `update_actif_divers_valeur`, `create_compte_bancaire`, `update_compte_solde`, `create_heritier`), récapitulez les valeurs exactes en euros ou en pourcentage.
+1. **Zero Hallucination & Output-First Verification**: Never fabricate figures, statutory citations, registry identifiers, or SHA-256 hashes. Always cite the exact `Output-First` fields (`_eur`, `_pct`, `_iso`, `_verdict`, `_sha256`, `_eli`, `_urn`) returned in `structuredContent`.
+2. **Strict Tenant RLS & ZDR**: Private workspace tools require OAuth 2.1 + PKCE (`S256`) authentication. Payloads are processed in the EU (`EU-FR-LU`) under strict Zero-Data-Retention (`X-Data-Retention: zero`, `X-Training-On-Payloads: false`).
+3. **Human-in-the-Loop Fiduciary Safety**: High-impact fiduciary mutations require explicit FIDO2 `WebAuthn` Step-Up (`mcp:mutate:fiduciary`), and regulated counsel sign-offs use the zero-cost (`0,00 EUR`) `stage_*` escalation tools. Never attempt autonomous outgoing bank transfers.

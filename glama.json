@@ -1,8 +1,10 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "maintainers": ["maximecernot-crypto"],
-  "name": "ORION Wealth Management",
-  "description": "Serveur MCP officiel d'ORION (orion-finance.eu) pour l'ingénierie patrimoniale, les fiducies, l'organigramme capitalistique et la transmission successorale.",
+  "maintainers": [
+    "antica-labs"
+  ],
+  "name": "ORION Finance",
+  "description": "Deterministic B2A wealth engineering, corporate holding & trust (fiducie) governance, tax simulations, and sealed GED audit via ORION Finance (www.orion-finance.eu).",
   "homepage": "https://www.orion-finance.eu",
   "remote": {
     "transport": "streamable-http",
